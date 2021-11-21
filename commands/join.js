@@ -44,7 +44,7 @@ exports.help = {
 
 
 function mergeImages(base, img2, output) {
-  images(base).size(512).draw(images(img2), 10, 10).save(output);
+  images(base).size(500).draw(images(img2).size(512), 10, 10).save(output);
 }
 
 const download = function(uri, filename, callback) {

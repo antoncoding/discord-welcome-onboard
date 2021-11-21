@@ -9,12 +9,12 @@ exports.run = (client, message) => {
   const avatar_hash = message.author.avatar;
   const url = `${DISCORD_BASE_CDN}avatars/${message.author.id}/${avatar_hash}.png?size=512`;
 
-  const baseImage = "imgs/base.png";
+  const baseImage = "./imgs/base.png";
 
   // files in data/ will be ignored on github
-  const pfpImg =  "data/pfp.png";
-  const clearedImg = "data/removed.png";
-  const finalImg = "data/finalImg.png";
+  const pfpImg =  "./data/pfp.png";
+  const clearedImg = "./data/removed.png";
+  const finalImg = "./data/finalImg.png";
   
   download(url, pfpImg, function() {
     removeBackGround(pfpImg, clearedImg, () => {

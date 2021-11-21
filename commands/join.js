@@ -56,12 +56,13 @@ const download = function(uri, filename, callback) {
 };
 
 function removeBackGround(input, output, callback) {
+  // console.log("!(process.env.CM_IS_PRODUCTION === \"true\")", new Boolean(!(process.env.CM_IS_PRODUCTION === "true"))).toString();
   return request.post({
     url: "https://clippingmagic.com/api/v1/images",
     formData: {
       image: fs.createReadStream(input), // TODO: Replace with your image
       format: "result",
-      test: !(process.process.CM_IS_PRODUCTION === "true"),
+      test: process.env.CM_IS_TEST,
     },
     auth: {
       user: process.env.CM_USER, 

@@ -61,8 +61,7 @@ function removeBackGround(input, output, callback) {
     formData: {
       image: fs.createReadStream(input), // TODO: Replace with your image
       format: "result",
-      test: "true", // TODO: Remove for production
-      // TODO: Add more upload options here
+      test: !process.process.CM_IS_PRODUCTION,
     },
     auth: {
       user: process.env.CM_USER, 
